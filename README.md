@@ -1,23 +1,29 @@
 request-language [![Build Status](https://travis-ci.org/tinganho/express-request-language.png)](https://travis-ci.org/tinganho/express-request-language)
 ========================
+
+### Warning:
+This is a fork of [requestlanguage][https://github.com/tinganho/express-request-language] module adapted to works on resify
+
+
+
 A middleware to figure out your request's language either by parsing `Accept-Language` header or by looking at a language cookie's value. `request-language` plays nicely with [L10ns][] by abstracting all your language setting logic for you.
 
 ### Installation:
 
 ```
-npm install express-request-language --save
+npm install restify-request-language --save
 ```
 
 ### Usage
 Use it as a middleware to express. All options are described below. Your language will be accessed with `req.language`.
 
 ```javascript
-var requestLanguage = require('express-request-language');
-var cookieParser = require('cookie-parser');
-var express = require('express');
-var app = express();
+var requestLanguage = require('restify-request-language');
+const cookieParser 		= require('restify-cookies');
+var restify = require('restify');
+var app = restify.createServer();
 
-app.use(cookieParser());
+app.use(cookieParser.parse);
 app.use(requestLanguage({
   languages: ['en-US', 'zh-CN'],
   cookie: {

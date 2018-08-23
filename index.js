@@ -78,7 +78,7 @@ module.exports = function(props) {
       set(props, req, queryLanguage);
       if(typeof props.cookie !== 'undefined') {
         req.cookies[props.cookie.name] = queryLanguage;
-        res.cookie(props.cookie.name, queryLanguage, props.cookie.options);
+        res.setCookie(props.cookie.name, queryLanguage, props.cookie.options);
       }
       return next();
     }
@@ -94,7 +94,7 @@ module.exports = function(props) {
         var match = changeLanguageURL.exec(req.url);
         if (match !== null) {
           if (props.languages.indexOf(match[1]) !== -1) {
-            res.cookie(props.cookie.name, match[1], props.cookie.options);
+            res.setCookie(props.cookie.name, match[1], props.cookie.options);
             return res.redirect('back');
           } else {
             return res.status(404).send('The language is not supported.')
@@ -110,7 +110,7 @@ module.exports = function(props) {
         }
       }
       language = req.cookies[props.cookie.name] = acceptLanguage.get(req.headers['accept-language']);
-      res.cookie(props.cookie.name, language, props.cookie.options);
+      res.setCookie(props.cookie.name, language, props.cookie.options);
     }
 
     set(props, req, language);

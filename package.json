@@ -1,7 +1,7 @@
 {
-  "name": "express-request-language",
+  "name": "restify-request-language",
   "version": "1.1.15",
-  "description": "Figure out a request's language tag by parsing Accept-Language header and stored cookies.",
+  "description": "Figure out a request's language tag by parsing Accept-Language header and stored cookies on restify.",
   "main": "index.js",
   "scripts": {
     "pretest": "eslint .",
@@ -10,19 +10,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tinganho/express-request-language.git"
+    "url": "https://github.com/kourad/restify-request-language.git"
   },
   "keywords": [
     "i18n",
     "http",
     "accept-language"
   ],
-  "author": "Tingan Ho",
+  "author": "Antonio Lopez Navarro",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tinganho/express-request-language/issues"
   },
-  "homepage": "https://github.com/tinganho/express-request-language",
+  "homepage": "https://github.com/kourad/restify-request-language",
   "dependencies": {
     "accept-language": "^3.0.4",
     "bcp47": "^1.1.2"
