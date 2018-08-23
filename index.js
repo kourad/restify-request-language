@@ -95,9 +95,10 @@ module.exports = function(props) {
         if (match !== null) {
           if (props.languages.indexOf(match[1]) !== -1) {
             res.setCookie(props.cookie.name, match[1], props.cookie.options);
-            return res.redirect('back');
+            return res.redirect('back', next);
           } else {
-            return res.status(404).send('The language is not supported.')
+            res.status(404);
+            return res.send('The language is not supported.')
           }
         }
       }

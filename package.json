@@ -1,6 +1,6 @@
 {
   "name": "restify-request-language",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "Figure out a request's language tag by parsing Accept-Language header and stored cookies on restify.",
   "main": "index.js",
   "scripts": {
